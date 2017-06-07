@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ApiService } from './shared';
+import { ApiService } from './services';
 
 import '../style/app.scss';
 
@@ -10,7 +10,7 @@ import '../style/app.scss';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  url = 'https://github.com/preboot/angular2-webpack';
+  url = 'git@github.com:idzer0lis/angular2starter.git';
   title: string;
 
   constructor(private api: ApiService) {

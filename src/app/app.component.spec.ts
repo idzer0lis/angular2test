@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideRoutes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { ApiService } from './shared';
+import { ApiService } from './services';
 import { AppComponent } from './app.component';
 
 describe('App', () => {
@@ -18,7 +18,7 @@ describe('App', () => {
   it('should have an url', () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    expect(fixture.debugElement.componentInstance.url).toEqual('https://github.com/preboot/angular2-webpack');
+    expect(fixture.debugElement.componentInstance.url).toEqual('git@github.com:idzer0lis/angular2starter.git');
   });
 
 });

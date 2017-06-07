@@ -1,8 +1,69 @@
-// styles in src/style directory are applied to the whole page
+// styles in src/style directory are applied to the whole app
 body {
-    background: #0147A7;
     color: #fff;
 }
 a {
     color: #03A9F4;
+}
+/*
+OCEANA color palettes and usage
+*/
+
+/*TEXT*/
+$header-gray: #303030; //Card header Text Card header icon
+$blue-dark-grey: #304050; //main text
+$navy-black: #081723; //main text2, popup and action menu bg (80% opacity)
+$dark-grey: #5A646E; //secondary text
+$mid-grey: #96A0AA; //secondary text, Active not in focus Webchat, social, email
+
+/*UI*/
+$light-grey:  #DCE1E6; //main BG, border
+$blue-grey: #3C5064; //menu, Active Webchat, social, Email, border, icons
+$mid-blue: #007AFF; //voice/video call on hold, active button, mouse over BG
+$light-blue: #CAE5FF; //button hover
+$attachment-blue: #C6DFF2; //list mouse over
+$off-white: #F2F2F2; //IM - agent work card button
+$light-orange: #F9D9B1; //reply in line BG IM
+$ice-blue: #ECF4FB; //list mouse over
+
+/*MIXINS*/
+@mixin button-border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+button {
+  color: $blue-dark-grey;
+  background-color: $off-white;
+  font-family: Arial;
+  font-size: 14px !important;
+  width: 100px;
+  height: 34px;
+  display: inline-block;
+  @include button-border-radius(5px);
+}
+button:hover, button:focus, button:active {
+  @extend button;
+  color: white;
+  background-color: $mid-blue;
+}
+
+button:disabled {
+  @extend button;
+  background-color: $off-white;
+  color: $blue-dark-grey;
+  opacity: 40;
+}
+
+i {
+  color: $dark-grey;
+}
+i:hover {
+  color: $mid-blue;
+}
+i:disabled {
+  color: $blue-dark-grey;
+  opacity: 40;
 }

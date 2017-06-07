@@ -2,12 +2,18 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ApiService } from './shared';
+import { LoginComponent } from './login/login.component';
+import { ApiService } from './services/api.service';
 import { routing } from './app.routing';
+
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { UserData }  from './services/in-memory-data.service';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
@@ -16,12 +22,15 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     BrowserModule,
     HttpModule,
     FormsModule,
-    routing
+    ReactiveFormsModule,
+    routing,
+    InMemoryWebApiModule.forRoot(UserData)
   ],
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   providers: [
     ApiService
