@@ -1,30 +1,16 @@
 // styles in src/style directory are applied to the whole app
+@import "colors";
+
 body {
     color: #fff;
 }
 a {
-    color: #03A9F4;
+    color: white;
 }
-/*
-OCEANA color palettes and usage
-*/
 
-/*TEXT*/
-$header-gray: #303030; //Card header Text Card header icon
-$blue-dark-grey: #304050; //main text
-$navy-black: #081723; //main text2, popup and action menu bg (80% opacity)
-$dark-grey: #5A646E; //secondary text
-$mid-grey: #96A0AA; //secondary text, Active not in focus Webchat, social, email
-
-/*UI*/
-$light-grey:  #DCE1E6; //main BG, border
-$blue-grey: #3C5064; //menu, Active Webchat, social, Email, border, icons
-$mid-blue: #007AFF; //voice/video call on hold, active button, mouse over BG
-$light-blue: #CAE5FF; //button hover
-$attachment-blue: #C6DFF2; //list mouse over
-$off-white: #F2F2F2; //IM - agent work card button
-$light-orange: #F9D9B1; //reply in line BG IM
-$ice-blue: #ECF4FB; //list mouse over
+a:hover {
+  color: $off-white;
+}
 
 /*MIXINS*/
 @mixin button-border-radius($radius) {

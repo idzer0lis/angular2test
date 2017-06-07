@@ -8,14 +8,14 @@ import { User } from './user';
 
 @Injectable()
 export class ApiService {
-  title = 'World';
-  private usersUrl = 'api/users';  // URL to web API
+  title = 'World'; // used it for service testing POC, will be removed
+  private usersUrl = 'api/users';  // URL mockup web API
 
   constructor(private http: Http) {}
 
   getUser(): Promise<User[]> {
     return this.http.get(this.usersUrl)
-      .toPromise() // transform observable to a promise
+      .toPromise() // transform observable to a promise TODO: Study observables more
       .then(this.extractData)
       .catch(this.handleError);
   }
@@ -26,7 +26,7 @@ export class ApiService {
   }
 
   private handleError(error: Response | any) {
-    // In a real world app, we might use a remote logging infrastructure
+    // Remote logging infrastructure? for now this is the main error handler for responses
     let errMsg: string;
     if (error instanceof Response) {
       const body = error.json() || '';
