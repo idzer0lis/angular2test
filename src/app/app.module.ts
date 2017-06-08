@@ -2,11 +2,19 @@ import { NgModule, ApplicationRef, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { ListComponent } from './components/list/list.component';
+import { SearchComponent } from './components/search/search.component';
+
 import { ApiService } from './services/api.service';
 import { routing } from './app.routing';
 
@@ -23,13 +31,20 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     FormsModule,
     ReactiveFormsModule,
     routing,
-    InMemoryWebApiModule.forRoot(UserData)
+    InMemoryWebApiModule.forRoot(UserData),
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent,
+    TabsComponent,
+    SidenavComponent,
+    ListComponent,
+    SearchComponent
   ],
   providers: [
     ApiService

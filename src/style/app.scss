@@ -1,23 +1,18 @@
 // styles in src/style directory are applied to the whole app
-@import "colors";
+@import "material";
+@import "mixins";
 
 body {
-    color: #fff;
+  color: #fff;
+  font-size: 14px;
+  font-family: Arial;
 }
 a {
-    color: white;
+  color: white;
 }
 
 a:hover {
   color: $off-white;
-}
-
-/*MIXINS*/
-@mixin button-border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
 }
 
 button {

@@ -8,7 +8,7 @@ import { LoginComponent } from '../login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { UserData }  from '../services/in-memory-data.service';
+import { UserData }  from '../../services/in-memory-data.service';
 
 
 describe('Home Component', () => {
