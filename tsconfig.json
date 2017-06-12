@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES5",
     "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -8,7 +8,7 @@
     "noEmitHelpers": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "lib": ["es2016", "dom"]
+    "lib": ["es2015", "dom"]
   },
   "compileOnSave": false,
   "buildOnSave": false,

@@ -9,6 +9,7 @@ import { validationMessages } from './validation.errors';
   providers: [ApiService]
 })
 export class LoginComponent implements OnInit {
+  showForm = true;
   loginForm: FormGroup;
   formErrors = {
     'name': '',
@@ -27,42 +28,42 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
         Validators.maxLength(24)
-      ]
-      ],
+      ]],
       'password': ['', [
         Validators.required,
         Validators.minLength(4),
         Validators.maxLength(24)
-      ]
-      ]
+      ]]
     });
-    this.loginForm.valueChanges
-      .subscribe(data => this.onValueChanged(data));
-    this.onValueChanged(); // (re)set validation messages now
   }
-  onValueChanged(data?: any) { // jslint: ignoreline
-    if (!this.loginForm) { return; }
-    const form = this.loginForm;
+
+  private checkLoginForm(formData: any): boolean { // jslint: ignoreline
+    let formValidated = true;
     for (const field in this.formErrors) {
       // clear previous error message (if any)
       this.formErrors[field] = '';
-      const control = form.get(field);
+      const control = formData.get(field);
       if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
         for (const key in control.errors) {
           this.formErrors[field] += messages[key] + ' ';
+          formValidated = false;
         }
       }
     }
+    return formValidated;
   }
   doLogin() {
-    console.log(this.loginForm);
-    const formData = this.loginForm.value;
+    if (!this.loginForm) { return; }
+    const formData = this.loginForm;
+    if (this.checkLoginForm(formData)) {
+      this.showForm = false;
+    }
     this.userService.getUser()
       .then(function (user) {
         console.log(user);
-        if (formData.email === user[0].name && formData.password === user[0].password) {
-          console.log('LOGGED IN');
+        if (formData.value.email === user[0].name && formData.value.password === user[0].password) {
+          // console.log('LOGGED IN');
         }
       })
   .catch(error => console.log(error));

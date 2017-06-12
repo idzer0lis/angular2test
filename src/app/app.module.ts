@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -33,7 +34,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     routing,
     InMemoryWebApiModule.forRoot(UserData),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   declarations: [
     AppComponent,
@@ -54,17 +56,17 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 })
 export class AppModule {
   constructor(public appRef: ApplicationRef) {}
-  hmrOnInit(store) {
+  hmrOnInit(store: any): void {
     console.log('HMR store', store);
   }
-  hmrOnDestroy(store) {
+  hmrOnDestroy(store: any): void {
     let cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
     // recreate elements
     store.disposeOldHosts = createNewHosts(cmpLocation);
     // remove styles
     removeNgStyles();
   }
-  hmrAfterDestroy(store) {
+  hmrAfterDestroy(store: any): void {
     // display new elements
     store.disposeOldHosts();
     delete store.disposeOldHosts;
