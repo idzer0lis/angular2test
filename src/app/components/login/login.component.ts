@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       'password': ['', [
         Validators.required,
         Validators.minLength(4),
-        Validators.maxLength(24)
+        Validators.maxLength(24) // you can add your own custom validation
       ]]
     });
   }
@@ -46,8 +46,8 @@ export class LoginComponent implements OnInit {
       if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
         for (const key in control.errors) {
-          this.formErrors[field] += messages[key] + ' ';
-          formValidated = false;
+            this.formErrors[field] += messages[key] + ' ';
+            formValidated = false;
         }
       }
     }

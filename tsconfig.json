@@ -4,6 +4,7 @@
     "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noEmit": true,
     "sourceMap": true,
     "noEmitHelpers": true,
     "noUnusedLocals": true,
@@ -15,5 +16,11 @@
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
     "useWebpackText": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "src/main-aot.ts",
+    "aot",
+    "rollup-config.ts"
+  ]
 }

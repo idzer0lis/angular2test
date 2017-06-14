@@ -12,7 +12,7 @@
       </trans-unit>
       <trans-unit id="52c38f4e3b042970079d234032e5833fc2904a0d" datatype="html">
         <source><x id="INTERPOLATION"/></source>
-        <target/>
+        <target>Test<target>
         <context-group purpose="location">
           <context context-type="sourcefile">c:/Users/abotez/Desktop/survey/src/app/components/login/login.component.ts</context>
           <context context-type="linenumber">15</context>

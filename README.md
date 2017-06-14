@@ -12,6 +12,8 @@ $ npm install && npm start
 ```
 go to [http://localhost:8080](http://localhost:8080) in your browser.
 
+
+
 ## Developing
 
 After you have installed all dependencies you can now start developing with:
@@ -25,6 +27,13 @@ As an alternative, you can work using Hot Module Replacement (HMR):
 * `npm run start:hmr`
 
 You can now modify your components on the fly without having to reload the entire page.
+
+
+## Compiling
+"node_modules/.bin/ngc" -p tsconfig-aot.json
+
+#Bundling
+"node_modules/.bin/rollup"  -c rollup-config.ts
 
 ## Testing
 
@@ -66,7 +75,7 @@ No, Webpack will add all the needed Javascript bundles as script tags and all th
 
 #### How to include external angular libraries ?
 
-Just install the lib via npm and import it in your code when you need it. Don't forget that you need to configure some external libs in the [bootstrap](https://github.com/preboot/angular-webpack/blob/master/src/main.ts) of your application.
+Just install the lib via npm and import it in your code when you need it. Don't forget that you need to configure some external libs in the [bootstrap](https://github.com/preboot/angular-webpack/blob/master/src/main-jit.ts) of your application.
 
 #### How to include external css files such as bootstrap.css ?
 

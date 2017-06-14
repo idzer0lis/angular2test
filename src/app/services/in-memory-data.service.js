@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var LoginService = (function () {
-    function LoginService() {
+var UserData = (function () {
+    function UserData() {
     }
-    LoginService.prototype.createDb = function () {
+    UserData.prototype.createDb = function () {
         var users = [
             { name: 'admin', password: 'admin' }
         ];
         return { users: users };
     };
-    return LoginService;
+    return UserData;
 }());
-exports.LoginService = LoginService;
+export { UserData };
 //# sourceMappingURL=in-memory-data.service.js.map
