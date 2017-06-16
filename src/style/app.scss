@@ -1,9 +1,16 @@
 // styles in src/style directory are applied to the whole app
-@import "material";
-@import "mixins";
+@import "./material";
+@import "./mixins";
 
+
+
+html, body{
+  height:100%;
+  width: 100%;
+}
 body {
   color: #fff;
+  background-color: $light-grey;
   font-size: 14px;
   font-family: Arial;
 }
@@ -16,25 +23,23 @@ a:hover {
 }
 
 button {
-  color: $blue-dark-grey;
-  background-color: $off-white;
-  font-family: Arial;
+  color: $off-white !important;
+  background-color: $blue-grey !important;
+  /*font-family: Arial;
   font-size: 14px !important;
   width: 100px;
   height: 34px;
-  display: inline-block;
-  @include button-border-radius(5px);
+  display: inline-block;*/
 }
 button:hover, button:focus, button:active {
   @extend button;
-  color: white;
-  background-color: $mid-blue;
+  background-color: $mid-blue !important;
 }
 
 button:disabled {
   @extend button;
-  background-color: $off-white;
-  color: $blue-dark-grey;
+  background-color: $off-white !important;
+  color: $blue-dark-grey !important;
   opacity: 40;
 }
 

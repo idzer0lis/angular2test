@@ -6,6 +6,7 @@ import { validationMessages } from './validation.errors';
 @Component({
   selector: 'my-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
   providers: [ApiService]
 })
 export class LoginComponent implements OnInit {
@@ -19,7 +20,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private userService: ApiService) {}
   ngOnInit(): void {
-    console.log(validationMessages);
     this.buildForm();
   }
   buildForm(): void {
@@ -61,7 +61,6 @@ export class LoginComponent implements OnInit {
     }
     this.userService.getUser()
       .then(function (user) {
-        console.log(user);
         if (formData.value.email === user[0].name && formData.value.password === user[0].password) {
           // console.log('LOGGED IN');
         }

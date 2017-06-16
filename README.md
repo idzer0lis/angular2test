@@ -28,13 +28,6 @@ As an alternative, you can work using Hot Module Replacement (HMR):
 
 You can now modify your components on the fly without having to reload the entire page.
 
-
-## Compiling
-"node_modules/.bin/ngc" -p tsconfig-aot.json
-
-#Bundling
-"node_modules/.bin/rollup"  -c rollup-config.ts
-
 ## Testing
 
 #### 1. Unit Tests

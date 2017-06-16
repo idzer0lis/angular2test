@@ -10,7 +10,6 @@ import '../style/app.scss';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  url = 'git@github.com:idzer0lis/angular2starter.git';
   title: string;
 
   constructor(private api: ApiService) {

@@ -1,18 +1,27 @@
-<form *ngIf="showForm" [formGroup]="loginForm" (ngSubmit)="doLogin($event)" class="col-md-2 offset-md-5">
+<div class="vertical-center">
+  <md-card *ngIf="showForm" fxFlex.sm="70%" fxFlexOffset.sm="15%" fxFlex="33%" fxFlexOffset="33%" class="login-card">
+    <img md-card-image src="img/oceanawprksp.png">
+    <md-card-header fxLayoutAlign="center">
+      <md-card-title>Login Agent</md-card-title>
+    </md-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="doLogin($event)" fxLayout="column" fxLayoutAlign="space-around center">
 
-  <input class="form-control" formControlName="name" type="name" placeholder="name" required >
-  <input class="form-control" formControlName="password" type="password" placeholder="password" required>
-  <button type="submit" class="btn btn-default" >Login</button>
+      <md-input-container floatPlaceholder="never">
+        <input mdInput formControlName="name" type="text" placeholder="Username">
+        <md-error *ngIf="formErrors.name" color="warn">
+          <ng-container i18n>{{ formErrors.name }}</ng-container>
+        </md-error>
+      </md-input-container>
 
-</form>
+      <md-input-container floatPlaceholder="never">
+        <input mdInput formControlName="password" type="password" placeholder="Password">
+        <md-error *ngIf="formErrors.password">
+          <ng-container i18n color="warn">{{ formErrors.password }}</ng-container>
+        </md-error>
+      </md-input-container>
 
-<div fxLayout="column" fxLayoutAlign="center center">
-
-  <div *ngIf="formErrors.name" class="alert alert-danger">
-    <ng-container i18n>{{ formErrors.name }}</ng-container>
-  </div>
-  <div *ngIf="formErrors.password" class="alert alert-danger">
-    <ng-container i18n>{{ formErrors.password }}</ng-container>
-  </div>
-
+      <button md-raised-button type="submit">SIGN IN</button>
+    </form>
+  </md-card>
 </div>
+<!--[disabled]="!loginForm.valid"-->

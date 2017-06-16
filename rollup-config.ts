@@ -5,13 +5,14 @@ import uglify from 'rollup-plugin-uglify';
 import scss from 'rollup-plugin-scss';
 import collectSass from 'rollup-plugin-collect-sass';
 import sass from 'rollup-plugin-sass';
+import autoprefixer from 'autoprefixer';
+import postcss from 'postcss';
+
 
 export default {
   entry: 'src/main-aot.ts',
   dest: 'aot/dist/build.js', // outputs a single application bundle
-  moduleName: 'avayaBundle',
   sourceMap: false,
-  format: 'iife',
   onwarn: function(warning) {
     // Skip certain warnings
 
@@ -22,13 +23,14 @@ export default {
     console.warn( warning.message );
   },
   plugins: [
-    scss({
-      // Write all styles to the bundle destination where .js is replaced by .css
+    sass({
+     /* // Write all styles to the bundle destination where .js is replaced by .css
       output: true,
-      /*include: ['src/app/!*.scss', 'src/app/!*!/!*!/!*.scss'],*/
-      /*options: {
-       includePaths: ['node_modules']
-       }*/
+      /!*include: ['src/style/app.scss'],*!/
+      options: {
+        data: '$header-gray: #303030;'
+      },*/
+
     }),
     nodeResolve({
       jsnext: true,
