@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { validationMessages } from './validation.errors';
+import { ValidationService } from '../../services/validation/validation.service';
 
 @Component({
   selector: 'my-login',
@@ -12,11 +12,10 @@ import { validationMessages } from './validation.errors';
 export class LoginComponent implements OnInit {
   showForm = true;
   loginForm: FormGroup;
-  formErrors = {
+  formErrors: object = {
     'name': '',
     'password': ''
   };
-  validationMessages = validationMessages();
 
   constructor(private fb: FormBuilder, private userService: ApiService) {}
   ngOnInit(): void {
@@ -32,12 +31,13 @@ export class LoginComponent implements OnInit {
       'password': ['', [
         Validators.required,
         Validators.minLength(4),
-        Validators.maxLength(24) // you can add your own custom validation
+        Validators.maxLength(24),
+        ValidationService.passwordValidator
       ]]
     });
   }
 
-  private checkLoginForm(formData: any): boolean { // jslint: ignoreline
+ /* private checkLoginForm(formData: any): boolean { // jslint: ignoreline
     let formValidated = true;
     for (const field in this.formErrors) {
       // clear previous error message (if any)
@@ -52,16 +52,18 @@ export class LoginComponent implements OnInit {
       }
     }
     return formValidated;
-  }
+  }*/
   doLogin() {
     if (!this.loginForm) { return; }
     const formData = this.loginForm;
-    if (this.checkLoginForm(formData)) {
+    this.showForm = false;
+    /*if (this.checkLoginForm(formData)) {
       this.showForm = false;
-    }
+    }*/
     this.userService.getUser()
       .then(function (user) {
         if (formData.value.email === user[0].name && formData.value.password === user[0].password) {
+          this.showForm = false;
           // console.log('LOGGED IN');
         }
       })

@@ -1,13 +1,12 @@
-var UserData = (function () {
-    function UserData() {
-    }
-    UserData.prototype.createDb = function () {
-        var users = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class UserData {
+    createDb() {
+        let users = [
             { name: 'admin', password: 'admin' }
         ];
-        return { users: users };
-    };
-    return UserData;
-}());
-export { UserData };
+        return { users };
+    }
+}
+exports.UserData = UserData;
 //# sourceMappingURL=in-memory-data.service.js.map

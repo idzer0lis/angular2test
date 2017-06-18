@@ -26,7 +26,6 @@ export class ApiService {
   }
 
   private handleError(error: Response | any) {
-    // Remote logging infrastructure? for now this is the main error handler for responses
     let errMsg: string;
     if (error instanceof Response) {
       const body = error.json() || '';

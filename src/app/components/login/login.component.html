@@ -1,5 +1,5 @@
-<div class="vertical-center">
-  <md-card *ngIf="showForm" fxFlex.sm="70%" fxFlexOffset.sm="15%" fxFlex="33%" fxFlexOffset="33%" class="login-card">
+<div>
+  <md-card *ngIf="showForm" fxFlex="70%" fxFlexOffset="15%" fxFlex.gt-sm="33%" fxFlexOffset.gt-sm="33%" class="login-card">
     <img md-card-image src="img/oceanawprksp.png">
     <md-card-header fxLayoutAlign="center">
       <md-card-title>Login Agent</md-card-title>
@@ -8,17 +8,13 @@
 
       <md-input-container floatPlaceholder="never">
         <input mdInput formControlName="name" type="text" placeholder="Username">
-        <md-error *ngIf="formErrors.name" color="warn">
-          <ng-container i18n>{{ formErrors.name }}</ng-container>
-        </md-error>
       </md-input-container>
+      <my-validation [control]="loginForm.controls.name"></my-validation>
 
       <md-input-container floatPlaceholder="never">
         <input mdInput formControlName="password" type="password" placeholder="Password">
-        <md-error *ngIf="formErrors.password">
-          <ng-container i18n color="warn">{{ formErrors.password }}</ng-container>
-        </md-error>
       </md-input-container>
+      <my-validation [control]="loginForm.controls.password"></my-validation>
 
       <button md-raised-button type="submit">SIGN IN</button>
     </form>

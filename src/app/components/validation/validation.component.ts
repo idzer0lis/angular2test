@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { ValidationService } from '../../services/validation/validation.service';
 
 @Component({
-  selector: 'control-messages',
-  template: `<div *ngIf="errorMessage !== null">{{errorMessage}}</div>`
+  selector: 'my-validation',
+  templateUrl: './validation.component.html',
+  styleUrls: ['./validation.component.scss']
 })
-export class ControlMessagesComponent {
+export class ValidationComponent {
   @Input() control: FormControl;
   constructor() { }
 

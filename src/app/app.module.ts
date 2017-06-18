@@ -1,4 +1,5 @@
 import { NgModule, ApplicationRef, NO_ERRORS_SCHEMA } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +16,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ListComponent } from './components/list/list.component';
 import { SearchComponent } from './components/search/search.component';
+import { ValidationComponent } from './components/validation/validation.component';
+import { ValidationService } from './services/validation/validation.service';
 
 import { ApiService } from './services/api.service';
 import { routing } from './app.routing';
@@ -42,6 +45,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     HomeComponent,
     AboutComponent,
     LoginComponent,
+    ValidationComponent,
     NavbarComponent,
     TabsComponent,
     SidenavComponent,
@@ -49,7 +53,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     SearchComponent
   ],
   providers: [
-    ApiService
+    ApiService,
+    ValidationService
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent]

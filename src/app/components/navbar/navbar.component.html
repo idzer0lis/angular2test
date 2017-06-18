@@ -1,5 +1,5 @@
-<header>
-  <nav>
+<header [showFrom]="showForm">
+  <nav *ngIf="!showForm">
     <input class="form-control col-md-1" placeholder="Search">
     <!--<a [routerLink]="['']">Home</a>
     <a [routerLink]="['about']">About</a>-->
