@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { ApiService } from './services';
+import { UserService } from './services/user';
 
 import '../style/app.scss';
 
@@ -12,7 +11,7 @@ import '../style/app.scss';
 export class AppComponent {
   title: string;
 
-  constructor(private api: ApiService) {
+  constructor(private api: UserService) {
     this.title = this.api.title;
   }
 }

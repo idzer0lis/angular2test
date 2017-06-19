@@ -9,9 +9,8 @@ export function getTranslationProviders(): Promise<Object[]> {
   if (!locale || locale === 'en-US') {
     return Promise.resolve(noProviders);
   }
-  // Ex: 'locale/messages.es.xlf`
-  const translationFile = `./locale/messages.${locale}.xlf`;
-  return getTranslationsWithSystemJs(translationFile)
+
+  return getTranslationsWithSystemJs(locale)
     .then( (translations: string ) => [
       { provide: TRANSLATIONS, useValue: translations },
       { provide: TRANSLATIONS_FORMAT, useValue: 'xlf' },
@@ -20,6 +19,6 @@ export function getTranslationProviders(): Promise<Object[]> {
     .catch(() => noProviders); // ignore if file not found
 }
 declare let System: any;
-function getTranslationsWithSystemJs(file: string) {
-  return System.import(file + '!text'); // relies on text plugin
+function getTranslationsWithSystemJs(locale: string) {
+  return System.import('./messages.' + locale + '.xlf');
 }

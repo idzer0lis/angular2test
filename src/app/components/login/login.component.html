@@ -7,9 +7,9 @@
     <form [formGroup]="loginForm" (ngSubmit)="doLogin($event)" fxLayout="column" fxLayoutAlign="space-around center">
 
       <md-input-container floatPlaceholder="never">
-        <input mdInput formControlName="name" type="text" placeholder="Username">
+        <input mdInput formControlName="username" type="text" placeholder="Username">
       </md-input-container>
-      <my-validation [control]="loginForm.controls.name"></my-validation>
+      <my-validation [control]="loginForm.controls.username"></my-validation>
 
       <md-input-container floatPlaceholder="never">
         <input mdInput formControlName="password" type="password" placeholder="Password">

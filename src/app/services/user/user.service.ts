@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
-
 import { Http , Response } from '@angular/http';
-
 import 'rxjs/add/operator/toPromise';
+
 
 import { User } from './user';
 
 @Injectable()
-export class ApiService {
-  title = 'World'; // used it for service testing POC, will be removed
+export class UserService {
+  title = 'Testing'; // used it for service testing POC, will be removed
   private usersUrl = 'api/users';  // URL mockup web API
-
   constructor(private http: Http) {}
 
   getUser(): Promise<User[]> {

@@ -7,7 +7,6 @@ import '@angular/http';
 import '@angular/router';
 import '@angular/material/';
 import 'hammerjs';
-
 import 'rxjs';
 import '@angularclass/hmr';
 

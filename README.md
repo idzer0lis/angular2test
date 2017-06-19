@@ -60,6 +60,10 @@ You can generate api docs (using [TypeDoc](http://typedoc.org/)) for your code w
 
 * `npm run docs`
 
+## Internationalization
+* `npm run i18n`
+It will generate xlf file, into src/public/locale/
+
 # FAQ
 
 #### Do I need to add script / link tags into index.html ?

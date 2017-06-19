@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const testing_1 = require("@angular/core/testing");
-const api_service_1 = require("./api.service");
+const api_service_1 = require("../api.service");
 const http_1 = require("@angular/http");
 const angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
-const in_memory_data_service_1 = require("./in-memory-data.service");
+const in_memory_data_service_1 = require("../in-memory-data.service");
 describe('Api Service', () => {
     beforeEach(() => {
         testing_1.TestBed.configureTestingModule({

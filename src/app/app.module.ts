@@ -9,7 +9,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TabsComponent } from './components/tabs/tabs.component';
@@ -19,12 +18,12 @@ import { SearchComponent } from './components/search/search.component';
 import { ValidationComponent } from './components/validation/validation.component';
 import { ValidationService } from './services/validation/validation.service';
 
-import { ApiService } from './services/api.service';
+import { UserService } from './services/user/';
 import { routing } from './app.routing';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { UserData }  from './services/in-memory-data.service';
+import { UserData }  from './services/user/in-memory-data.service';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
@@ -43,7 +42,6 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     LoginComponent,
     ValidationComponent,
     NavbarComponent,
@@ -53,7 +51,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     SearchComponent
   ],
   providers: [
-    ApiService,
+    UserService,
     ValidationService
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { LoginComponent } from '../login/login.component';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'my-navbar',
@@ -7,13 +6,8 @@ import { LoginComponent } from '../login/login.component';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  //@Input login: LoginComponent;
-  @Input('showForm') showForm: boolean;
   constructor() {}
-
   ngOnInit(): void {
-    console.log('Hello Home');
-
+    console.log('Hello from Navbar');
   };
-
 }

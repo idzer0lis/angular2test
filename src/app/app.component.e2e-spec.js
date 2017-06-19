@@ -16,12 +16,8 @@ describe('App', function () {
     expect(element(by.css('my-app main')).isPresent()).toEqual(true);
   });
 
-  it('should have a main title', function () {
-    expect(element(by.css('main h1')).getText()).toEqual('Hello World');
-  });
-
   it('should have <footer>', function () {
-    expect(element(by.css('my-app footer')).getText()).toEqual("Footer");
+    expect(element(by.css('my-app footer')).isPresent()).toEqual(true);
   });
 
 });

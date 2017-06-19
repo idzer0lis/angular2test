@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 
 import { TestBed } from '@angular/core/testing';
 
+import { MaterialModule } from '@angular/material';
 import { HomeComponent } from './home.component';
 import { LoginComponent } from '../login/login.component';
+import { ValidationComponent } from '../validation/validation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { UserData }  from '../../services/in-memory-data.service';
+import { UserData }  from '../../services/user/in-memory-data.service';
 
 
 describe('Home Component', () => {
@@ -16,8 +18,8 @@ describe('Home Component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule, HttpModule, InMemoryWebApiModule.forRoot(UserData)],
-      declarations: [HomeComponent, LoginComponent, TestComponent]
+      imports: [FormsModule, ReactiveFormsModule, HttpModule, MaterialModule, InMemoryWebApiModule.forRoot(UserData)],
+      declarations: [HomeComponent, LoginComponent, TestComponent, ValidationComponent]
     });
     TestBed.overrideComponent(TestComponent, { set: { template: html }});
   });

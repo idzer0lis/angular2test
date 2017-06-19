@@ -18,6 +18,10 @@
   },
   "exclude": [
     "node_modules",
-    "rollup-config.ts"
+    "rollup-config.ts",
+    "src/public",
+    "src/style",
+    "coverage",
+    "dist"
   ]
 }
